@@ -1,19 +1,20 @@
 .race-grid { display:grid;  
   @media (min-width:941px) { padding:80px; gap:80px; }
   @media (max-width:940px) { padding:40px; gap:40px; }
+  @media (max-width:600px) { padding:20px; gap:20px; }
 }
 
 
 $raceAnimation: 0.5s;
 
-section.race { background: $black; color:$white; border-radius: 8px; padding:20px 40px;
+section.race { background: $black; color:$white; border-radius: 1.5vw; padding:20px 40px;
   
-  .top-info { display:flex; gap:20px; font-weight: 700;
+  .top-info { display:flex; gap:20px; font-weight: 700; font-size:clamp(9px,1.5vw,28px);
 
     span { display: inline-flex; height:1.25em; line-height: 130%; }
     .label-and-count { display:flex; gap:10px; padding:0.25em 1em; }
     .count { background:$white; color:$black; line-height: 80%; padding:0.25em 0.5em; border-radius: 6px; }
-    .round-holder {  background:$red; border-radius: 0.5em;
+    .round-holder {  background:$red; border-radius: 6px;
       .count { color:$red; }
     }
     .round-badge { background:$red; border-radius: 6px;}
@@ -26,7 +27,7 @@ section.race { background: $black; color:$white; border-radius: 8px; padding:20p
       @media (max-width:620px) { display:none; }
     }
   }
-  .big { position: relative; margin-bottom: 40px;;
+  .big { position: relative; margin-bottom: 40px;
     .title-holder { 
       // color: #c7d63c;
       
@@ -46,19 +47,25 @@ section.race { background: $black; color:$white; border-radius: 8px; padding:20p
     }
   }
 
-  .location-info { display:grid; gap:20px; grid-template-columns: clamp(60px,10vw,210px) 1fr;
+  .location-info { display:grid; gap:20px; grid-template-columns: clamp(60px,10vw,210px) 1fr; font-weight:700;
+    .flag-holder { display: flex; align-items: center; }
     .location-text { display:flex; flex-wrap: wrap; align-content: space-between; }
-    .row { font-weight:700; line-height: 80%; font-size:clamp(6px, 2.5vw, 48px); flex-basis: 100%; }
+    .row { line-height: 120%; font-size:clamp(6px, 2.5vw, 48px); flex-basis: 100%; }
     .km { font-size:65%; font-weight: 400; padding-left:1em; }
   }
 
   .inner { opacity: 0.85; transition: opacity 0.25s linear; }
+
+  .top-info,
+  .location-info { opacity: 0.5; font-weight: 300; transition: font 0.4s ease-out 0.25s, opacity 0.5s linear; }
 
   &.active {
     .inner { opacity: 1; }
     .track-holder { transform:scale(1); z-index: 6; transition-delay: 0.35s;
       img { opacity: 1; transition-delay: 0.35s; }
     }
+    .top-info,
+    .location-info { opacity: 1; font-weight: 700; }
 
   }
 }

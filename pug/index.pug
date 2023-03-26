@@ -26,11 +26,10 @@ html(lang="en")
                 .line-holder
                   .line
                 .label-and-count.laps-holder
-                  span.count {{race.laps}}
+                  span.count {{padNumber(race.laps,2)}}
                   span.label Laps
               .big
                 .title-holder
-                  //h2.title(:letters="race.title.length" :style="titleStyle(race.title.length, race.customFontWeight)") {{race.title}}
                   h2.title(
                     :letters="race.title.length"
                     :start-width="getTitleWidths(race).startWidth"
