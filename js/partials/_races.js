@@ -10,7 +10,8 @@ const races =  [
     countryCode: "bh",
     km: 5.412,
     trackFile: "bahrain.svg",
-    customEndWeight: 49,
+    customStartWeight: 70,
+    customEndWeight: 43,
   },
   {
     title: "Saudi Arabia",
@@ -22,7 +23,9 @@ const races =  [
     trackName: "Jeddah Corniche Circuit",
     countryCode: "sa",
     km: 6.174,
-    trackFile: "saudi-arabia.svg"
+    trackFile: "saudi-arabia.svg",
+    customStartWeight: 43,
+    customEndWeight: 33
   },
   {
     title: "Australia",
@@ -36,8 +39,8 @@ const races =  [
     km: 5.278,
     trackFile: "australia.svg",
     customMapWidth: 51,
-    customStartWeight: 54,
-    customEndWeight: 33,
+    customStartWeight: 56,
+    customEndWeight: 35,
   },
   {
     title: "Azerbaijan",
@@ -51,8 +54,8 @@ const races =  [
     km: 4.909,
     trackFile: "azerbaijan.svg",
     customMapWidth: 51,
-    customStartWeight: 46,
-    customEndWeight: 29,
+    customStartWeight: 50,
+    customEndWeight: 32,
   },
   {
     title: "Miami",
@@ -79,6 +82,7 @@ const races =  [
     countryCode: "it",
     km: 4.909,
     trackFile: "emilia.svg",
+    customStartWeight: 35,
     customEndWeight: 25,
   },
   {
@@ -93,7 +97,7 @@ const races =  [
     km: 4.909,
     trackFile: "monaco.svg",
     customMapWidth: 35,
-    customStartWeight: 72,
+    customStartWeight: 73,
     customEndWeight: 51,
   },
   {
@@ -107,6 +111,7 @@ const races =  [
     countryCode: "es",
     km: 4.909,
     trackFile: "spain.svg",
+    customStartWeight: 106,
     customEndWeight: 72
   },
   {
@@ -121,6 +126,7 @@ const races =  [
     km: 14,
     trackFile: "canada.svg",
     customMapWidth: 52,
+    customStartWeight: 76,
     customEndWeight: 43
   },
   {
@@ -144,7 +150,10 @@ const races =  [
     round: 11,
     raceName: "Formula 1 Aramco British Grand Prix 2023",
     trackName: "Silverstone Circuit",
-    countryCode: "gb"
+    trackFile: "britain.svg",
+    countryCode: "gb",
+    customStartWeight: 42,
+    customEndWeight: 27
   },
   {
     title: "Hungary",
@@ -155,6 +164,8 @@ const races =  [
     trackName: "Hungaroring",
     countryCode: "hu",
     trackFile: "hungary.svg",
+    customStartWeight: 65,
+    customEndWeight: 49
   },
   {
     title: "Belgium",
@@ -165,6 +176,8 @@ const races =  [
     trackName: "circuit de spa-francorchamps",
     countryCode: "be",
     trackFile: "belgium.svg",
+    customStartWeight: 72,
+    customEndWeight: 52
   },
   {
     title: "Netherlands",
@@ -175,6 +188,8 @@ const races =  [
     trackName: "circuit zandvoort",
     countryCode: "nl",
     trackFile: "netherlands.svg",
+    customStartWeight: 44,
+    customEndWeight: 33
   },
   {
     title: "Italy",
@@ -186,30 +201,6 @@ const races =  [
     countryCode: "it",
     trackFile: "italy.svg",
     customStartWeight: 120,
-    customEndWeight: 78,
-  },
-  {
-    title: "Japan",
-    startDate: "2023-09-22",
-    endDate: "2023-09-24",
-    round: 17,
-    laps: 0,
-    raceName: "Formula 1 lenovo japanese grand prix 2023",
-    trackName: "suzuka international racing course",
-    countryCode: "jp",
-    km: 4.909,
-    customStartWeight: 86,
-    customEndWeight: 60
-  },
-  {
-    title: "Las Vegas",
-    startDate: "2023-10-16",
-    endDate: "2023-10-18",
-    round: 22,
-    laps: 0,
-    raceName: "Formula 1 Heineken silver Las vegas grand prix 2023",
-    trackName: "Las vegas",
-    countryCode: "us",
-    km: 4.909
-  },
+    customEndWeight: 79,
+  }
 ];

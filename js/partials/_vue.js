@@ -3,131 +3,8 @@ var app = new Vue({
   data: {
     
     races: races,
-
-    letterTests: [
-      {
-        title: "A",
-        startDate: "1111-11-11",
-        endDate: "1111-11-11",
-        round: 1,
-        laps: 99,
-        raceName: "Vestland Norway",
-        trackName: "Letter Test",
-        countryCode: "no",
-        km: 6.66
-      },
-      {
-        title: "Iz",
-        startDate: "1111-11-11",
-        endDate: "1111-11-13",
-        round: 2,
-        laps: 99,
-        raceName: "An Island In Croatia",
-        trackName: "Letter Test",
-        countryCode: "hr",
-        km: 6.66
-      },
-      {
-        title: "Ayr",
-        startDate: "1111-11-11",
-        endDate: "2222-02-22",
-        round: 3,
-        laps: 99,
-        raceName: "Ontario Canada",
-        trackName: "Letter Test",
-        countryCode: "ca",
-        km: 6.66
-      },
-      {
-        title: "Axum",
-        startDate: "1111-11-11",
-        endDate: "2222-02-22",
-        round: 4,
-        laps: 99,
-        raceName: "Ethiopia",
-        trackName: "Letter Test",
-        countryCode: "et",
-        km: 6.66
-      },
-      {
-        title: "Italy",
-        startDate: "2023-10-01",
-        startDate: "2023-10-03",
-        round: 5,
-        laps: 0,
-        raceName: "One of the best Hitman levels",
-        trackName: "Letter Test",
-        countryCode: "us",
-        km: 4.909
-      },
-      {
-        title: "Canada",
-        startDate: "2023-10-01",
-        startDate: "2023-10-03",
-        round: 6,
-        laps: 0,
-        raceName: "It's a country, not a city",
-        trackName: "Letter Test",
-        countryCode: "us",
-        km: 4.909
-      },
-      {
-        title: "Belgium",
-        startDate: "1111-11-11",
-        endDate: "2222-02-22",
-        round: 7,
-        laps: 99,
-        raceName: "Beer & Chocolate",
-        trackName: "Letter Test",
-        countryCode: "be",
-        km: 6.66
-      },
-      {
-        title: "Hi There",
-        startDate: "1111-11-11",
-        endDate: "2222-02-22",
-        round: 8,
-        laps: 99,
-        raceName: "I couldn't think of a city with 8 characters",
-        trackName: "Letter Test",
-        countryCode: "us",
-        km: 6.66
-      },
-      {
-        title: "Las Vegas",
-        startDate: "2023-10-16",
-        endDate: "2023-10-18",
-        round: 9,
-        laps: 0,
-        raceName: "Formula 1 Heineken silver Las vegas grand prix 2023",
-        trackName: "Las vegas",
-        countryCode: "us",
-        km: 4.909
-      },
-      {
-        title: "Netherlands",
-        startDate: "1111-11-11",
-        endDate: "2222-02-22",
-        round: 11,
-        laps: 99,
-        raceName: "French Fries & Mayonnaise",
-        trackName: "Letter Test",
-        countryCode: "nl",
-        km: 6.66
-      },
-      {
-        title: "Minneapolis",
-        startDate: "1111-11-11",
-        endDate: "2222-02-22",
-        round: 13,
-        laps: 99,
-        raceName: "Ethiopia",
-        trackName: "Letter Test",
-        countryCode: "us",
-        km: 6.66
-      },
-      
-    ],
+    letterTests: letterTests
+    
   },
 
   methods: {
@@ -150,41 +27,48 @@ var app = new Vue({
       let startWidth = 25;
       let endWidth = 40;
       
-      if (letters > 0 && letters < 4) {
+      if (letters > 0 && letters < 3) {
         startWidth = 150;
         endWidth = 150;
+      } else if (letters == 3) {
+          startWidth = 150;
+          endWidth = 130;
       } else if (letters == 4) {
-        startWidth = 100;
+        startWidth = 113;
         endWidth = 80;
       } else if (letters == 5) {
-        startWidth = 98;
-        endWidth = 91;
+        startWidth = 103;
+        endWidth = 74;
       } else if (letters == 6) {
-        startWidth = 73;
-        endWidth = 62;
+        startWidth = 80;
+        endWidth = 54;
       } else if (letters == 7) {
-        startWidth = 67;
+        startWidth = 75;
         endWidth = 46;
       } else if (letters == 8) {
         startWidth = 69;
-        endWidth = 60;
+        endWidth = 48;
       } else if (letters == 9) {
         startWidth = 54;
-        endWidth = 34;
+        endWidth = 41;
       } else if (letters == 10) {
         startWidth = 48;
-        endWidth = 35;
+        endWidth = 32;
       } else if (letters == 11) {
-        startWidth = 42;
-        endWidth = 33;
+        startWidth = 40;
+        endWidth = 27;
       } else if (letters == 12) {
         startWidth = 41;
-        endWidth = 31;
+        endWidth = 26;
       } else if (letters == 13) {
-        startWidth = 40;
+        startWidth = 43;
         endWidth = 28;
       } else if (letters == 14) {
-        startWidth = 33;
+        startWidth = 37;
+        endWidth = 25;
+      } else {
+        startWidth = 35;
+        endWidth = 25;
       }
       if (race.customStartWeight) {
         startWidth = race.customStartWeight;
@@ -237,6 +121,17 @@ var app = new Vue({
 
     padNumber(number,padAmount) {
       return String(number).padStart(2,'0')
+    },
+
+    getRowCount(race) {
+      let count = 0;
+      if (race.raceName) {
+        count++;
+      }
+      if (race.trackName || race.km) {
+        count++;
+      }
+      return count;
     }
   },
 

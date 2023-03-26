@@ -1,13 +1,12 @@
-.race-grid { display:grid;  
-  @media (min-width:941px) { padding:80px; gap:80px; }
-  @media (max-width:940px) { padding:40px; gap:40px; }
-  @media (max-width:600px) { padding:20px; gap:20px; }
+.race-grid { display:grid; padding:$gap; gap:$gap;
 }
 
 
 $raceAnimation: 0.5s;
 
-section.race { background: $black; color:$white; border-radius: 1.5vw; padding:20px 40px;
+section.race { background: $black; color:$white; border-radius: 1.5vw; 
+  @media (min-width:601px) { padding:40px; }
+  @media (max-width:600px) { padding:20px; }
   max-width: 100%; overflow: hidden;
   .top-info { display:flex; gap:20px; font-weight: 700; font-size:clamp(9px,1.5vw,28px);
 
@@ -19,7 +18,7 @@ section.race { background: $black; color:$white; border-radius: 1.5vw; padding:2
     }
     .round-badge { background:$red; border-radius: 6px;}
     .line-holder { flex-grow: 10; display:flex; align-items: center;
-      @media (max-width:670px) { display:none; }
+      // @media (max-width:670px) { display:none; }
     }
     .line { height:2px; width:100%; background:$white; }
     .laps-holder { display:flex; gap:10px;
@@ -27,19 +26,17 @@ section.race { background: $black; color:$white; border-radius: 1.5vw; padding:2
       @media (max-width:620px) { display:none; }
     }
   }
-  .big { position: relative; margin-bottom: 40px;
+  .big { position: relative; margin-bottom: $gap;
     .title-holder { 
-      // color: #c7d63c;
-      
-      @media (min-width:666px) { padding-top:5vw; }
+      @media (min-width:666px) { padding-top:7vw; }
       @media (max-width:665px) { padding-top:30px; }
       position: relative; z-index: 5;
     }
-    .title { font-variation-settings: "wdth" 25; text-transform: uppercase; line-height: 0.75; font-weight: normal; letter-spacing: 0.01em; transform: scaleY(120%); margin:unset;
+    .title { font-variation-settings: "wdth" 25; white-space: nowrap; text-transform: uppercase; line-height: 0.75; font-weight: normal; letter-spacing: 0.01em; transform: scaleY(120%); margin:unset;
       transition: font $raceAnimation cubic-bezier(0.31, -0.43, 0.63, 1.61);
       @media (min-width:1350px) { font-size:24vw; }
       @media (min-width:666px) and (max-width:1349px) { font-size:22vw; }
-      @media (max-width:665px) { font-size:20vw; }
+      @media (max-width:665px) { font-size:22vw; }
     }
     .track-holder { @include position(absolute,8%,0,2%); width:40%; transition: transform $raceAnimation cubic-bezier(0.31, -0.43, 0.63, 1.61); transform-origin: center; z-index: 3;
       img { width:100%; height: 100%; object-fit: contain; object-position: center right; opacity: 0; transition: opacity $raceAnimation linear; }
@@ -47,17 +44,23 @@ section.race { background: $black; color:$white; border-radius: 1.5vw; padding:2
     }
   }
 
-  .location-info { display:grid; gap:20px; grid-template-columns: clamp(60px,10vw,210px) 1fr; font-weight:700;
-    .flag-holder { display: flex; align-items: center; }
-    .location-text { display:flex; flex-wrap: wrap; align-content: space-between; }
+  .location-info { display:grid; gap:$gap; grid-template-columns: clamp(60px,14vw,210px) 1fr; font-weight:700;
+    .flag-holder { display: flex; align-items: center;
+      img { aspect-ratio: 16/9; object-fit: cover; display:block; width:100%; }
+    }
+    .location-text { display:flex; flex-wrap: wrap; align-content: space-between;
+      &[row-count="1"] { align-content: center; }
+    }
     .row { line-height: 120%; font-size:clamp(6px, 2.5vw, 48px); flex-basis: 100%; }
     .km { font-size:65%; font-weight: 400; padding-left:1em; }
   }
 
-  .inner { opacity: 0.85; transition: opacity 0.25s linear; }
+  // Setting styles before the active animation.
 
+  .inner { opacity: 0.85; transition: opacity 0.25s linear; }
   .top-info,
   .location-info { opacity: 0.5; font-weight: 300; transition: font 0.4s ease-out 0.25s, opacity 0.5s linear; }
+  .line { transform: scaleX(0.01); transform-origin: center left; transition:transform $raceAnimation ease-out; }
 
   &.active {
     .inner { opacity: 1; }
@@ -66,6 +69,8 @@ section.race { background: $black; color:$white; border-radius: 1.5vw; padding:2
     }
     .top-info,
     .location-info { opacity: 1; font-weight: 700; }
+    .line { transform: scaleX(1); }
+
 
   }
 }

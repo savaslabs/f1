@@ -38,3 +38,12 @@ $headline: $nickel;
 // MEASUREMENTS //////////////////////////////////////////////////////////////////////
 $mobile-max: 767px;
 $desktop-min: 768px;
+
+:root {
+  --gap: 20px;
+  @media (min-width:941px) { --gap:80px; }
+  @media (min-width: 601px) and (max-width:940px) { --gap:40px; }
+}
+
+
+$gap: var(--gap);
