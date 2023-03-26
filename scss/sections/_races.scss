@@ -60,7 +60,7 @@ section.race { background: $black; color:$white; border-radius: 1.5vw;
   .inner { opacity: 0.85; transition: opacity 0.25s linear; }
   .top-info,
   .location-info { opacity: 0.5; font-weight: 300; transition: font 0.4s ease-out 0.25s, opacity 0.5s linear; }
-  .line { transform: scaleX(0.01); transform-origin: center left; transition:transform $raceAnimation ease-out; }
+  .line { opacity:0; transform: scaleX(0.01); transform-origin: center left; transition:transform $raceAnimation ease-out; }
 
   &.active {
     .inner { opacity: 1; }
@@ -69,7 +69,7 @@ section.race { background: $black; color:$white; border-radius: 1.5vw;
     }
     .top-info,
     .location-info { opacity: 1; font-weight: 700; }
-    .line { transform: scaleX(1); }
+    .line { opacity: 1; transform: scaleX(1); }
 
 
   }
