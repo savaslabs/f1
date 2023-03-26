@@ -8,7 +8,7 @@
 $raceAnimation: 0.5s;
 
 section.race { background: $black; color:$white; border-radius: 1.5vw; padding:20px 40px;
-  
+  max-width: 100%; overflow: hidden;
   .top-info { display:flex; gap:20px; font-weight: 700; font-size:clamp(9px,1.5vw,28px);
 
     span { display: inline-flex; height:1.25em; line-height: 130%; }

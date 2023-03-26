@@ -176,7 +176,7 @@ var app = new Vue({
         endWidth = 35;
       } else if (letters == 11) {
         startWidth = 42;
-        endWidth = 38;
+        endWidth = 33;
       } else if (letters == 12) {
         startWidth = 41;
         endWidth = 31;

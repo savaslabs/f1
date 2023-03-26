@@ -25,7 +25,7 @@ html(lang="en")
                 .dates(v-html="prettyDateRange(race.startDate,race.endDate)")
                 .line-holder
                   .line
-                .label-and-count.laps-holder
+                .label-and-count.laps-holder(v-if="race.laps")
                   span.count {{padNumber(race.laps,2)}}
                   span.label Laps
               .big

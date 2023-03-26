@@ -10,7 +10,7 @@
     <link href="css/site.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2023-02-26@09:33:06">
+    <meta http-equiv="last-modified" content="2023-02-26@13:34:44">
   </head>
   <body>
     <div id="app" v-cloak>
@@ -27,7 +27,7 @@
                 <div class="line-holder">
                   <div class="line"></div>
                 </div>
-                <div class="label-and-count laps-holder"><span class="count">{{padNumber(race.laps,2)}}</span><span class="label">Laps</span></div>
+                <div class="label-and-count laps-holder" v-if="race.laps"><span class="count">{{padNumber(race.laps,2)}}</span><span class="label">Laps</span></div>
               </div>
               <div class="big">
                 <div class="title-holder">
@@ -56,7 +56,7 @@
       <script src="js/libraries/jquery.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-      <script src="js/min/site.min.js?updated2023-02-26@09:33:06"></script>
+      <script src="js/min/site.min.js?updated2023-02-26@13:34:44"></script>
     </div>
   </body>
 </html>
