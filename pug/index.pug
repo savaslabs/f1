@@ -10,9 +10,47 @@ html(lang="en")
   body
     #app(v-cloak)
 
-      main(style="height:100vh; display:flex; align-items:center; justify-content:center; padding:2rem;")
-        .inner
-          h1(v-text="h1")
-          h5(v-text="h5")
+      header
+
+        h1 f12023
+
+      main
+        .race-grid
+          section.race(v-for="(race, raceCount) in races" :id="'Race'+(raceCount+1)")
+            .inner
+              .top-info
+                .label-and-count.round-holder
+                  span.label Round
+                  span.count {{race.round}}
+                .dates(v-html="prettyDateRange(race.startDate,race.endDate)")
+                .line-holder
+                  .line
+                .label-and-count.laps-holder
+                  span.count {{race.laps}}
+                  span.label Laps
+              .big
+                .title-holder
+                  //h2.title(:letters="race.title.length" :style="titleStyle(race.title.length, race.customFontWeight)") {{race.title}}
+                  h2.title(
+                    :letters="race.title.length"
+                    :start-width="getTitleWidths(race).startWidth"
+                    :end-width="getTitleWidths(race).endWidth"
+                    :style="titleStyle(race)"
+                  ) {{race.title}}
+                figure.track-holder(:style="trackMapStyles(race.customMapWidth)" )
+                  template(v-if="race.trackFile")
+                    img(:src="'svg/tracks/'+race.trackFile" :alt="race.title+' track'")
+                  template(v-else)
+                    img(:src="'svg/tracks/backup.svg'")
+              .location-info
+                .flag-holder
+                  img(v-if= "race.countryCode" :src="'svg/flags/'+race.countryCode+'.svg'")
+                .location-text
+                  .row
+                    span.race-name {{race.raceName}}
+                  .row
+                    span.track-name {{race.trackName}}
+                    span.km {{race.km}} km
+
 
     include partials/_javascripts

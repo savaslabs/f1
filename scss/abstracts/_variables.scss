@@ -1,8 +1,8 @@
 // COLORS //////////////////////////////////////////////////////////////////////////////////
-$white: #eee;
-$black: #212121;
+$white: #fff;
+$black: #000;
 $blue: #4885ed;
-$red: #ee2a2a;
+$red: #D31029;
 $green: #17680f;
 $yellow:#e9eab9;
 $teal: #4e7f71;
@@ -25,10 +25,15 @@ $medium:400;
 $bold:700;
 
 // FONT UTILITIES /////////////////////////////////////////////////////////////////////
-$serif: "Palatino", serif;
-$sans-serif: Helvetica, sans-serif;
+@font-face {
+  font-family: Nickel;
+  src: url('../fonts/NickelGothicV3Variable[slnt\,wdth].woff');
+}
+$nickel: Nickel, sans-serif;
+$figtree: 'Figtree', sans-serif;
+$sans-serif: $figtree;
 $font-family: $sans-serif;
-$headline: $serif;
+$headline: $nickel;
 
 // MEASUREMENTS //////////////////////////////////////////////////////////////////////
 $mobile-max: 767px;

@@ -4,24 +4,60 @@
     <meta charset="utf-8">
     <title></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&amp;display=swap" rel="stylesheet">
     <link href="css/site.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2022-11-16@13:47:39">
+    <meta http-equiv="last-modified" content="2023-02-25@23:13:54">
   </head>
   <body>
     <div id="app" v-cloak>
-      <main style="height:100vh; display:flex; align-items:center; justify-content:center; padding:2rem;">
-        <div class="inner">
-          <h1 v-text="h1"></h1>
-          <h5 v-text="h5"></h5>
+      <header>
+        <h1>f12023</h1>
+      </header>
+      <main>
+        <div class="race-grid">
+          <section class="race" v-for="(race, raceCount) in races" :id="'Race'+(raceCount+1)">
+            <div class="inner">
+              <div class="top-info">
+                <div class="label-and-count round-holder"><span class="label">Round</span><span class="count">{{race.round}}</span></div>
+                <div class="dates" v-html="prettyDateRange(race.startDate,race.endDate)"></div>
+                <div class="line-holder">
+                  <div class="line"></div>
+                </div>
+                <div class="label-and-count laps-holder"><span class="count">{{race.laps}}</span><span class="label">Laps</span></div>
+              </div>
+              <div class="big">
+                <div class="title-holder">
+                  <!--h2.title(:letters="race.title.length" :style="titleStyle(race.title.length, race.customFontWeight)") {{race.title}}-->
+                  <h2 class="title" :letters="race.title.length" :start-width="getTitleWidths(race).startWidth" :end-width="getTitleWidths(race).endWidth" :style="titleStyle(race)">{{race.title}}</h2>
+                </div>
+                <figure class="track-holder" :style="trackMapStyles(race.customMapWidth)">
+                  <template v-if="race.trackFile"><img :src="'svg/tracks/'+race.trackFile" :alt="race.title+' track'"></template>
+                  <template v-else><img :src="'svg/tracks/backup.svg'"></template>
+                </figure>
+              </div>
+              <div class="location-info">
+                <div class="flag-holder"><img v-if="race.countryCode" :src="'svg/flags/'+race.countryCode+'.svg'"></div>
+                <div class="location-text">
+                  <div class="row"><span class="race-name">{{race.raceName}}</span></div>
+                  <div class="row"><span class="track-name">{{race.trackName}}</span><span class="km">{{race.km}} km</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
     </div>
     <div class="javascripts">
       <script src="js/libraries/vue.full.js"></script>
       <script>const testing = true;</script>
-      <script src="js/min/site.min.js?updated2022-11-16@13:47:39"></script>
+      <script src="js/libraries/jquery.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+      <script src="js/min/site.min.js?updated2023-02-25@23:13:54"></script>
     </div>
   </body>
 </html>
