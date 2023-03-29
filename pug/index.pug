@@ -21,7 +21,7 @@ html(lang="en")
               .top-info
                 .label-and-count.round-holder
                   span.label Round
-                  span.count {{race.round}}
+                  span.count {{padNumber(race.round,2)}}
                 .dates(v-html="prettyDateRange(race.startDate,race.endDate)")
                 .line-holder
                   .line
@@ -39,8 +39,6 @@ html(lang="en")
                 figure.track-holder(:style="trackMapStyles(race.customMapWidth)" )
                   template(v-if="race.trackFile")
                     img(:src="'svg/tracks/'+race.trackFile" :alt="race.title+' track'")
-                  //- template(v-else)
-                  //-   img(:src="'svg/tracks/backup.svg'")
               .location-info
                 .flag-holder
                   img(v-if= "race.countryCode" :src="'svg/flags/'+race.countryCode+'.svg'")

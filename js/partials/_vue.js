@@ -107,13 +107,13 @@ var app = new Vue({
       } else if (startMonth == endMonth) {
         return `
           <time>${startMonth} ${startDay}</time>
-          - 
+          — 
           <time>${endDay}</time>
         `;
       } else {
         return `
           <time>${startMonth} ${startDay}</time>
-          - 
+          —
           <time>${endMonth} ${endDay}</time>
         `;
       }
