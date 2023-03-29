@@ -43,9 +43,9 @@ html(lang="en")
                 .flag-holder
                   img(v-if= "race.countryCode" :src="'svg/flags/'+race.countryCode+'.svg'")
                 .location-text(:row-count="getRowCount(race)")
-                  .row(v-if="race.raceName")
+                  .row.event-name(v-if="race.raceName")
                     span.race-name {{race.raceName}}
-                  .row(v-if="race.trackName || race.km")
+                  .row.circuit(v-if="race.trackName || race.km")
                     span.track-name {{race.trackName}}
                     span.km(v-if="race.km") {{race.km}} km
 

@@ -11,7 +11,7 @@
     <link href="css/site.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2023-02-29@14:26:09">
+    <meta http-equiv="last-modified" content="2023-02-29@15:09:43">
   </head>
   <body>
     <div id="app" v-cloak>
@@ -41,8 +41,8 @@
               <div class="location-info">
                 <div class="flag-holder"><img v-if="race.countryCode" :src="'svg/flags/'+race.countryCode+'.svg'"></div>
                 <div class="location-text" :row-count="getRowCount(race)">
-                  <div class="row" v-if="race.raceName"><span class="race-name">{{race.raceName}}</span></div>
-                  <div class="row" v-if="race.trackName || race.km"><span class="track-name">{{race.trackName}}</span><span class="km" v-if="race.km">{{race.km}} km</span></div>
+                  <div class="row event-name" v-if="race.raceName"><span class="race-name">{{race.raceName}}</span></div>
+                  <div class="row circuit" v-if="race.trackName || race.km"><span class="track-name">{{race.trackName}}</span><span class="km" v-if="race.km">{{race.km}} km</span></div>
                 </div>
               </div>
             </div>
@@ -56,7 +56,7 @@
       <script src="js/libraries/jquery.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-      <script src="js/min/site.min.js?updated2023-02-29@14:26:09"></script>
+      <script src="js/min/site.min.js?updated2023-02-29@15:09:43"></script>
     </div>
   </body>
 </html>

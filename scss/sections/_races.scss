@@ -9,7 +9,11 @@ section.race { background: $black; color:$white; border-radius: 1.5vw;
   @media (min-width:601px) { padding:40px; }
   @media (max-width:600px) { padding:20px; }
   max-width: 100%; overflow: hidden;
-  .top-info { display:flex; gap:20px; font-weight: 700; font-size:clamp(9px,1.5vw,28px);
+  .top-info { display:flex; gap:20px; font-weight: 700; 
+    
+    //font-size:clamp(9px,1.5vw,28px);
+
+    font-size:clamp(16px,2vw,28px);
 
     span { display: inline-flex; height:1.25em; line-height: 130%; }
     .label-and-count { display:flex; gap:10px; padding:0.25em 0.5em; }
@@ -24,17 +28,19 @@ section.race { background: $black; color:$white; border-radius: 1.5vw;
     .line { height:2px; width:100%; background:$white; }
     .laps-holder { display:flex; gap:10px;
       .count { color:$black; padding:0.5em; height:1.25em; border-radius: 6px; font-family: $number-font; line-height: 35%; }
-      @media (max-width:620px) { display:none; }
+      @media (max-width:620px) { 
+        .label { display:none; }
+      }
     }
   }
   .big { position: relative; margin-bottom: $gap;
-    .title-holder { 
-      @media (min-width:666px) { padding-top:7vw; }
-      @media (max-width:665px) { padding-top:30px; }
+    .title-holder {  padding-top:$gap;
+      // @media (min-width:666px) { padding-top:7vw; }
+      // @media (max-width:665px) { padding-top:30px; }
       position: relative; z-index: 5;
     }
-    .title { font-variation-settings: "wdth" 25; white-space: nowrap; text-transform: uppercase; line-height: 0.75; font-weight: normal; letter-spacing: 0.01em; transform: scaleY(120%); margin:unset;
-      transition: font $raceAnimation cubic-bezier(0.31, -0.43, 0.63, 1.61);
+    .title { font-variation-settings: "wdth" 25; padding-top:0.15em; white-space: nowrap; text-transform: uppercase; line-height: 0.75; font-weight: normal; letter-spacing: 0.01em; transform: scaleY(120%); margin:unset;
+      transition: font $raceAnimation ease-in-out;
       font-size:clamp(48px,20vw,325px);
     }
     .track-holder { @include position(absolute,8%,0,2%); width:40%; transition: transform 0.15s ease-out; transform-origin: center; z-index: 3;
@@ -46,15 +52,22 @@ section.race { background: $black; color:$white; border-radius: 1.5vw;
     }
   }
 
-  .location-info { display:grid; gap:$gap; grid-template-columns: clamp(60px,14vw,210px) 1fr; font-weight:700;
+  .location-info { display:grid; gap:20px; grid-template-columns: clamp(60px,14vw,210px) 1fr; font-weight:700;
+
+    grid-template-columns: 165px 1fr;
     .flag-holder { display: flex; align-items: center;
-      img { aspect-ratio: 16/9; object-fit: cover; display:block; width:100%; }
+      img { aspect-ratio: 16/9; object-fit: cover; display:block; width:100%; border-radius: 6px; }
     }
     .location-text { display:flex; flex-wrap: wrap; align-content: space-between;
       &[row-count="1"] { align-content: center; }
     }
-    .row { line-height: 120%; font-size:clamp(6px, 2.5vw, 48px); flex-basis: 100%; }
-    .km { font-size:65%; font-weight: 400; padding-left:1em; }
+    // .track-name { font-size:clamp(16px,2vw,28px); }
+    .row { line-height: 120%; /* font-size:clamp(6px, 2.5vw, 48px); */ flex-basis: 100%;
+      &.event-name { font-size:clamp(18px,2.6vw,36px); }
+      &.circuit { font-size:clamp(16px,2vw,28px); }
+      .km { font-size:70%; font-weight: 400; padding-left:1em; }
+    }
+    
   }
 
   // Setting styles before the active animation.
@@ -64,13 +77,15 @@ section.race { background: $black; color:$white; border-radius: 1.5vw;
   .location-info { opacity: 0.5; font-weight: 300; transition: font 0.4s ease-out 0.25s, opacity 0.5s linear; }
   .line { opacity:0; transform: scaleX(0.01); transform-origin: center left; transition:transform $raceAnimation ease-out; }
 
+  .race-name { transition: font 0.3s linear; }
   &.active {
     .inner { opacity: 1; }
     .track-holder { transform:scale(1); z-index: 6; transition-delay: 0.2s;
       img { opacity: 1; transition-delay: 0.20s; }
     }
     .top-info,
-    .location-info { opacity: 1; font-weight: 700; }
+    .location-info { opacity: 1; }
+    .race-name { font-weight: 700; }
     .line { opacity: 1; transform: scaleX(1); }
   }
 }
