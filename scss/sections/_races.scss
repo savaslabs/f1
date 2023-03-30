@@ -31,7 +31,7 @@ section.race { background: $black; color:$white; border-radius: 1.5vw;
     }
     .title { font-variation-settings: "wdth" 25; padding-top:0.15em; white-space: nowrap; text-transform: uppercase; line-height: 0.75; font-weight: normal; letter-spacing: 0.01em; transform: scaleY(120%); margin:unset;
       transition: font $raceAnimation ease-in-out;
-      font-size:clamp(48px,22vw,355px);
+      font-size:clamp(48px,22vw,330px);
     }
     .track-holder { @include position(absolute,25%,0,0); width:40%; transition: transform 0.15s ease-out; transform-origin: center; z-index: 3;
       img { width:100%; height: 100%; object-fit: contain; object-position: center right; opacity: 0; transition: opacity 0.3s linear; }
