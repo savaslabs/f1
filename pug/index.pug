@@ -11,23 +11,25 @@ html(lang="en")
     #app(v-cloak)
 
       header
-
-        h1 f12023
+        .inner
+          h1 f12023
 
       main
-        .race-grid
+        .race-grid.inner
           section.race(v-for="(race, raceCount) in races" :id="'Race'+(raceCount+1)")
             .inner
               .top-info
-                .label-and-count.round-holder
-                  span.label Round
-                  span.count {{padNumber(race.round,2)}}
+                .round-holder
+                  .label-and-count
+                    span.label Round
+                    span.count {{padNumber(race.round,2)}}
                 .dates(v-html="prettyDateRange(race.startDate,race.endDate)")
                 .line-holder
                   .line
-                .label-and-count.laps-holder(v-if="race.laps")
-                  span.count {{padNumber(race.laps,2)}}
-                  span.label Laps
+                .laps-holder(v-if="race.laps")
+                  .label-and-count
+                    span.count {{padNumber(race.laps,2)}}
+                    span.label Laps
               .big
                 .title-holder
                   h2.title(

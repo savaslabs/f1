@@ -39,6 +39,10 @@ $headline: $nickel;
 // MEASUREMENTS //////////////////////////////////////////////////////////////////////
 $mobile-max: 767px;
 $desktop-min: 768px;
+$max-width: 1440px;
+
+// ANIMATION VARIABLES ///////////////////////////////////////////////
+$raceAnimation: 0.5s;
 
 :root {
   --gap: 20px;
