@@ -1,24 +1,32 @@
 
-# There are many boilerplates. This one is mine.
+# The Next F1 Race
 
-I never set out to create a boilerplate, but after making sites dozens of times, I realized there were familiar patterns I was reaching for, and I'd always copy that code out of my last project. The most recent time, I decided to strip everything out into a boilerplate.
+[OPEN GRAPH IMAGE GOES HERE, LINKS TO PROD SITE]
 
-## What is this?
-This is the starting point that I ([Lemon](https://ahoylemon.xyz)) use every time I make a new website. It's built using my own aesthetics.
+## Who made this?
 
-### And what aesthetics are those?
-I want to have reusable components to help me make a static HTML site, and I want to do that as quickly as possible. At the same time, I *don't* want to have a whole bunch of boilerplate stuff in the shipped code. The idea here is **only when you need it**: Making something that's slim and extendable.
+This is a [Labs](https://savaslabs.com/labs) project from [Savas Labs](https://savaslabs.com/), it was built to showcase the coolness of [Variable Fonts](https://variablefonts.io) and Formula 1 Racing (something our Senior UI/UX designer [Drew](https://www.savaslabs.com/team/drew-glover) knows a lot about)
 
-Also you'll need [Prepros](https://prepros.io). I'm a fan of it, and I avoid NPM whenever I can, so this uses Prepros.
 
-This also assumes you want to write in Vue, Sass & Pug.
+## How was this made?
 
-### Alright, how do I get started?
-Click [Use This Template](https://github.com/AhoyLemon/startHere/generate) to use this repo as a project template. Open up Prepros, add your new project to Prepros and hit the globe button to serve your page. If you see **It works.** in the middle of the screen, congratulations it's working right.
+This project was made using
+- [Pug](https://github.com/pugjs/pug)
+- [Vue](https://github.com/vuejs/vue)
+- [Sass](https://github.com/sass/sass)
+- [Prepros](https://prepros.io)
+- [ScrollMagic](https://github.com/janpaepke/ScrollMagic)
 
-## Fundamentals
-I'll break this down into three sections, Pug, Vue and Sass.
+- The primary display type David Jonathan Ross' [Nickel Gothic v3](https://djr.com/notes/nickel-gothic-condensed-compressed-font-of-the-month) (provided by [Font of the Month Club](https://djr.com/font-of-the-month-club))
+- The other fonts in use are [Figtree](https://fonts.google.com/specimen/Figtree) and [Unbounded](https://fonts.google.com/specimen/Unbounded)
+- The flags are using Hampus Joakim Borgos' [Accurate Country Flags](https://github.com/hampusborgos/country-flags) repo.
+- The structure is a fork of Lemon's [startHere](https://github.com/ahoyLemon/startHere) template.
 
-1. [Pug](_docs/pug.md)
-2. [Sass](_docs/sass.md)
-3. [js](_docs/js.md)
+## Do you make other stuff?
+We make all kinds of stuff!  Check out our [Work Page](https://www.savaslabs.com/work) for some examples, and then [get in contact](https://www.savaslabs.com/contact). Maybe we can build something for you.
+
+## Do you have a dad joke for me?
+
+Yeah, did you hear about the lumberjack who got fired for cutting too many trees?
+
+He saw too much.
