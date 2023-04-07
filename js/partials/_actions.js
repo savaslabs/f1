@@ -2,7 +2,6 @@ function jqueryActions() {
 
   let controller = new ScrollMagic.Controller({loglevel: 3});
 
-
   $('section.race').each(function() {
     var currentScreen = this;
     const raceHeight = parseInt($(this).height()) + 20;
