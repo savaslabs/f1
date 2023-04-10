@@ -17,7 +17,7 @@ This project was made using
 - [Prepros](https://prepros.io)
 - [ScrollMagic](https://github.com/janpaepke/ScrollMagic)
 
-- The primary display type David Jonathan Ross' [Nickel Gothic v3](https://djr.com/notes/nickel-gothic-condensed-compressed-font-of-the-month) (provided by [Font of the Month Club](https://djr.com/font-of-the-month-club))
+- The primary display type David Jonathan Ross' [Nickel Gothic v3](https://djr.com/notes/nickel-gothic-condensed-compressed-font-of-the-month) (licensed from [Font of the Month Club](https://djr.com/font-of-the-month-club))
 - The other fonts in use are [Figtree](https://fonts.google.com/specimen/Figtree) and [Unbounded](https://fonts.google.com/specimen/Unbounded)
 - The flags are using Hampus Joakim Borgos' [Accurate Country Flags](https://github.com/hampusborgos/country-flags) repo.
 - The structure is a fork of Lemon's [startHere](https://github.com/ahoyLemon/startHere) template.
