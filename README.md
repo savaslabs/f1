@@ -2,6 +2,7 @@
 # The Next F1 Race
 
 [OPEN GRAPH IMAGE GOES HERE, LINKS TO PROD SITE]
+[![The Next F1 Race](https://thenextf1race.com/og-wide.png)](https://thenextf1race.com)
 
 ## Who made this?
 
