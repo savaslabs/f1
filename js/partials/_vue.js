@@ -97,9 +97,9 @@ var app = new Vue({
       const allMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
       const startDate = new Date(first);
       const endDate = new Date(second);
-      const startMonth = allMonths[startDate.getMonth()];
+      const startMonth = allMonths[startDate.getUTCMonth()];
       const startDay = String(startDate.getUTCDate()).padStart(2,'0')
-      const endMonth = allMonths[endDate.getMonth()];
+      const endMonth = allMonths[endDate.getUTCMonth()];
       const endDay = String(endDate.getUTCDate()).padStart(2,'0')
       //const startDay = startDate.getUTCDate();
       if (first == second) {
