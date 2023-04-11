@@ -31,8 +31,8 @@ footer { background:$black; color:$white; padding:$gap;
   @media (min-width:1021px) {
     .inner { grid-template-columns: 200px 1fr 200px;
       .ava-holder { order: 1; }
-      .networks-holder { order: 2; }
-      .repo-holder { order: 3; grid-column: span 2; }
+      .repo-holder { order: 2; }
+      .networks-holder { order: 3; }
     }
   }
 }
