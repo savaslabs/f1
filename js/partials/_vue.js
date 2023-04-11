@@ -9,6 +9,18 @@ var app = new Vue({
 
   methods: {
 
+    scrollTo(roundNumber) {
+      const self = this;
+      var target = $('#Round'+roundNumber);
+
+      const duration = Number(roundNumber * 200);
+
+      $('html, body').animate({
+          scrollTop: target.offset().top - 120
+      }, duration);
+      return false;
+    },
+
     titleStyle(race) {
       const self = this;
       const wdth = self.getTitleWidths(race).startWidth;
@@ -136,7 +148,28 @@ var app = new Vue({
   },
 
   computed: {
-
+    computedNextRace() {
+      const self = this;
+      const today = moment().format('YYYYMMDD');
+      let raceIndex;
+      let raceTitle;
+      let daysUntil;
+      self.races.forEach((race, index) => {
+        const end = moment(race.endDate).format('YYYYMMDD');
+        if (Number(end) > Number(today) && !raceTitle) {
+          raceTitle = race.title;
+          raceNumber = Number(index + 1);
+          daysUntil = moment(race.startDate).diff(moment(),'days');
+        }
+      });
+      
+      return {
+        today: today,
+        raceNumber: raceNumber,
+        raceTitle: raceTitle,
+        daysUntil: daysUntil
+      }
+    }
   },
 
   mounted: function() {

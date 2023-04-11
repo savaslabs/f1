@@ -11,7 +11,7 @@
     <link href="css/site.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta http-equiv="last-modified" content="2023-03-10@16:07:37">
+    <meta http-equiv="last-modified" content="2023-03-11@15:48:57">
     <!-- Twitter-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@SavasLabs">
@@ -31,12 +31,16 @@
     <div id="app" v-cloak>
       <header>
         <div class="inner">
-          <h1>f12023</h1>
+          <h1>The Next F1 Race</h1>
+          <div class="when"><span>is in </span><a class="next-race" @click="scrollTo(computedNextRace.raceNumber)">{{computedNextRace.raceTitle}}</a>
+            <template v-if="computedNextRace.daysUntil &gt; 1"><span>in </span><strong v-text="computedNextRace.daysUntil"></strong><span> days.</span></template>
+            <template v-else><span>this weekend.</span></template>
+          </div>
         </div>
       </header>
       <main>
         <div class="race-grid inner">
-          <section class="race" v-for="(race, raceCount) in races" :id="'Race'+(raceCount+1)">
+          <section class="race" v-for="(race, raceCount) in races" :id="'Round'+(raceCount+1)"><a :name="'Stripe-'+race.title.replace(' ','')"></a>
             <div class="inner">
               <div class="top-info">
                 <div class="round-holder">
@@ -73,10 +77,11 @@
     <div class="javascripts">
       <script src="js/libraries/vue.full.js"></script>
       <script>const testing = true;</script>
+      <script src="js/libraries/moment.min.js"></script>
       <script src="js/libraries/jquery.min.js"></script>
       <script src="js/libraries/scrollmagic.min.js"></script>
       <script src="js/libraries/scrollmagic.addindicators.min.js"></script>
-      <script src="js/min/site.min.js?updated2023-03-10@16:07:37"></script>
+      <script src="js/min/site.min.js?updated2023-03-11@15:48:57"></script>
     </div>
   </body>
 </html>

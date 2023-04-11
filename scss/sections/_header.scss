@@ -1,12 +1,8 @@
-@keyframes titleFontFlex {
-  from { font-variation-settings: "wdth" 25; }
-  to { font-variation-settings: "wdth" 150; }
-}
-
-header { padding: $gap; gap:$gap;
-  .inner { @include inner($max-width,0); }
-  @media (max-width:600px) { padding-top:60px; }
-  h1 {  text-align: center; font-size:clamp(64px,16vw,250px); color:$white; line-height: 80%; text-transform: uppercase; color:transparent; letter-spacing: 0.02em;  -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: white; margin:unset; padding-top:0.4em; padding-bottom:0.4em;
-    font-variation-settings: "wdth" 120; transform: scaleY(2);
+header { padding:$gap;
+  .inner { @include inner(1280px,0); }
+  h1 { font-family: $font-family; font-size:clamp(32px,7vw,80px); margin:0; line-height: 0.95; }
+  a.next-race { text-decoration: underline; text-decoration-thickness: 0.12em; text-underline-offset: 0.15em; transition: all 0.1s linear; cursor: pointer;
+    &:hover, &:focus { text-decoration-thickness: 0.2em; }
   }
+  .when { font-size:clamp(24px,6vw,60px); }
 }

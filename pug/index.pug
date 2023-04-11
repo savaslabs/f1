@@ -12,11 +12,20 @@ html(lang="en")
     
       header
         .inner
-          h1 f12023
-
+          h1= siteTitle
+          .when
+            span is in 
+            a.next-race(@click="scrollTo(computedNextRace.raceNumber)") {{computedNextRace.raceTitle}}
+            template(v-if="computedNextRace.daysUntil > 1")
+              span in 
+              strong(v-text="computedNextRace.daysUntil")
+              span  days.
+            template(v-else)
+              span this weekend.
       main
         .race-grid.inner
-          section.race(v-for="(race, raceCount) in races" :id="'Race'+(raceCount+1)")
+          section.race(v-for="(race, raceCount) in races" :id="'Round'+(raceCount+1)")
+            a(:name="'Stripe-'+race.title.replace(' ','')")
             .inner
               .top-info
                 .round-holder
