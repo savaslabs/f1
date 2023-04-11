@@ -1,0 +1,12 @@
+header.site-header
+  .inner
+    h1= siteTitle
+    .when
+      span is in 
+      a.next-race(@click="scrollTo(computedNextRace.raceNumber)") {{computedNextRace.raceTitle}}
+      template(v-if="computedNextRace.daysUntil > 1")
+        span in 
+        strong(v-text="computedNextRace.daysUntil")
+        span  days.
+      template(v-else)
+        span this weekend.

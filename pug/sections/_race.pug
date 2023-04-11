@@ -1,0 +1,35 @@
+section.race(v-for="(race, raceCount) in races" :id="'Round'+(raceCount+1)")
+  a(:name="'Stripe-'+race.title.replace(' ','')")
+  .inner
+    .top-info
+      .round-holder
+        .label-and-count
+          span.label Round
+          span.count {{padNumber(race.round,2)}}
+      .dates(v-html="prettyDateRange(race.startDate,race.endDate)")
+      .line-holder
+        .line
+      .laps-holder(v-if="race.laps")
+        .label-and-count
+          span.count {{padNumber(race.laps,2)}}
+          span.label Laps
+    .big
+      .title-holder
+        h2.title(
+          :letters="race.title.length"
+          :start-width="getTitleWidths(race).startWidth"
+          :end-width="getTitleWidths(race).endWidth"
+          :style="titleStyle(race)"
+        ) {{race.title}}
+      figure.track-holder(:style="trackMapStyles(race.customMapWidth)" )
+        template(v-if="race.trackFile")
+          img(:src="'svg/tracks/'+race.trackFile" :alt="race.title+' track'")
+    .location-info
+      .flag-holder
+        img(v-if= "race.countryCode" :src="'svg/flags/'+race.countryCode+'.svg'")
+      .location-text(:row-count="getRowCount(race)")
+        .row.event-name(v-if="race.raceName")
+          span.race-name {{race.raceName}}
+        .row.circuit(v-if="race.trackName || race.km")
+          span.track-name {{race.trackName}}
+          span.km(v-if="race.km") {{race.km}} km

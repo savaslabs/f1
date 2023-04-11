@@ -1,0 +1,38 @@
+footer { background:$black; color:$white; padding:$gap;
+  .inner { @include inner(1280px); display:grid; gap:20px; }
+  
+
+  .ava-holder {
+    img { width:100%; max-width: 150px; }
+  }
+  .repo-holder { display:flex; align-items: center; justify-content: center;
+    a { color:$white; font-size:1.85rem; font-weight: 275; text-decoration-thickness: 2px; text-underline-offset: 0.1em; text-decoration-color:rgba($white,0.75); transition: all 0.15s linear;
+      &:hover, &:focus { color:rgba($white,0.5); }
+    }
+  }
+  
+  .networks-holder { display:flex; align-items: center; justify-content: center;
+    a { display: inline-block; margin-right: 0.75em; color:$white; text-decoration: none; transition: color 0.15s linear;
+      &:hover, &:focus { color:rgba($white,0.5); }
+    }
+    svg { width:30px; height:30px;
+      * { fill:currentColor; }
+    }
+
+  }
+
+  @media (max-width:1020px) {
+    .inner { grid-template-columns: repeat(2,1fr); row-gap: 40px;
+      .ava-holder { order: 1; }
+      .networks-holder { order: 2; }
+      .repo-holder { order: 3; grid-column: span 2; }
+    }
+  }
+  @media (min-width:1021px) {
+    .inner { grid-template-columns: 200px 1fr 200px;
+      .ava-holder { order: 1; }
+      .networks-holder { order: 2; }
+      .repo-holder { order: 3; grid-column: span 2; }
+    }
+  }
+}
