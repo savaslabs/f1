@@ -162,6 +162,14 @@ var app = new Vue({
           daysUntil = moment(race.startDate).diff(moment(),'days');
         }
       });
+      if (!raceTitle) {
+        return {
+          today: today,
+          raceNumber: null,
+          raceTitle:null,
+          daysUntil: null
+        }
+      }
       
       return {
         today: today,

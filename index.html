@@ -11,7 +11,7 @@
     <link href="css/site.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Stay on track anywhere you go with with The Next F1 Race, the ultimate destination for the Formula 1 racing schedule. It's the prettiest race schedule on the internet.">
-    <meta http-equiv="last-modified" content="2023-03-17@09:45:02">
+    <meta http-equiv="last-modified" content="2023-10-29@13:23:54">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,7 +39,8 @@
       <header class="site-header">
         <div class="inner">
           <h1>The Next F1 Race</h1>
-          <div class="when"><span>is in </span><a class="next-race" @click="scrollTo(computedNextRace.raceNumber)">{{computedNextRace.raceTitle}}</a>
+          <div class="when" v-if="!computedNextRace.raceNumber"><span>will be in 2024. Check back then.</span></div>
+          <div class="when" v-else><span>is in </span><a class="next-race" @click="scrollTo(computedNextRace.raceNumber)">{{computedNextRace.raceTitle}}</a>
             <template v-if="computedNextRace.daysUntil &gt; 1"><span>in </span><strong v-text="computedNextRace.daysUntil"></strong><span> days.</span></template>
             <template v-else><span>this weekend.</span></template>
           </div>
@@ -115,7 +116,7 @@
       <script src="js/libraries/moment.min.js"></script>
       <script src="js/libraries/jquery.min.js"></script>
       <script src="js/libraries/scrollmagic.min.js"></script>
-      <script src="js/min/site.min.js?updated2023-03-17@09:45:02"></script>
+      <script src="js/min/site.min.js?updated2023-10-29@13:23:54"></script>
       <!--  Google tag (gtag.js) -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDH43TV090"></script>
       <script>

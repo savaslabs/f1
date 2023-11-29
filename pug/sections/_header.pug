@@ -1,7 +1,11 @@
 header.site-header
   .inner
     h1= siteTitle
-    .when
+
+    .when(v-if="!computedNextRace.raceNumber")
+      span will be in 2024. Check back then.
+
+    .when(v-else)
       span is in 
       a.next-race(@click="scrollTo(computedNextRace.raceNumber)") {{computedNextRace.raceTitle}}
       template(v-if="computedNextRace.daysUntil > 1")
